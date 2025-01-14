@@ -16,14 +16,21 @@ const eslintConfig = [
       "next/core-web-vitals",
       "plugin:@typescript-eslint/recommended",
       "plugin:react-hooks/recommended",
+      "prettier",
     ],
-    plugins: ["@typescript-eslint", "react-hooks"],
+    plugins: ["prettier", "@typescript-eslint", "react-hooks"],
     parser: "@typescript-eslint/parser",
     rules: {
       semi: ["error"],
       quotes: ["error", "double"],
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
+      "prettier/prettier": [
+        "warn",
+        {
+          endOfLine: "auto",
+        },
+      ],
     },
   }),
 ];
