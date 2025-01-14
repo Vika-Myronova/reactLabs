@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Japan",
+    "flag": "C:\\Users\\brain\\react\\language-heritage-app\\public\\japanFlag.jpg",
+    "description": "Japan is an island nation in East Asia.",
+    "phrases": [
+      { "text": "Hello", "translation": "こんにちは (Konnichiwa)" },
+      { "text": "Thank you", "translation": "ありがとう (Arigatou)" }
+    ],
+    "traditions": ["Tea Ceremony", "Cherry Blossom Festival"],
+    "quizQuestions": [
+      {
+        "text": "What is the Japanese word for Hello?",
+        "options": ["こんにちは", "ありがとう", "さようなら"],
+        "answer": "こんにちは"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "France",
+    "flag": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fflagandbuntingstore.co.uk%2Ffrance-flag%2F&psig=AOvVaw2aTKOj4E5CKKNO3g-xCBL7&ust=1736967928749000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKC-9fTz9YoDFQAAAAAdAAAAABAE",
+    "description": "France is known for its rich history, art, and cuisine.",
+    "phrases": [
+      { "text": "Hello", "translation": "Bonjour" },
+      { "text": "Thank you", "translation": "Merci" }
+    ],
+    "traditions": ["Bastille Day", "Wine Harvest Festival"],
+    "quizQuestions": [
+      {
+        "text": "What is the French word for Thank you?",
+        "options": ["Merci", "Salut", "Au revoir"],
+        "answer": "Merci"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Italy",
+    "flag": "https://link_to_flag_image.com",
+    "description": "Italy is famous for its ancient history, art, and food.",
+    "phrases": [
+      { "text": "Hello", "translation": "Ciao" },
+      { "text": "Thank you", "translation": "Grazie" }
+    ],
+    "traditions": ["Carnival of Venice", "Grape Harvest Festival"],
+    "quizQuestions": [
+      {
+        "text": "What is the Italian word for Hello?",
+        "options": ["Ciao", "Grazie", "Arrivederci"],
+        "answer": "Ciao"
+      }
+    ]
+  }
+]
