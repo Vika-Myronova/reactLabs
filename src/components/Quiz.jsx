@@ -20,7 +20,6 @@ const Quiz = ({ questions }) => {
 
   return (
     <div style={{ margin: "20px 0" }}>
-      <h2>Quiz</h2>
       {currentQuestion ? (
         <div>
           <p>
