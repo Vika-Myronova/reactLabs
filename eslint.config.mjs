@@ -32,6 +32,7 @@ const eslintConfig = [
         },
       ],
     },
+    root: true,
   }),
 ];
 
