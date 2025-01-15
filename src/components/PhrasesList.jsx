@@ -7,7 +7,11 @@ const PhrasesList = ({ phrases }) => {
       <ul>
         {phrases.map((phrase, index) => (
           <li key={index}>
-            <span>{phrase.text}</span> - <span>{phrase.translation}</span>
+            <span>{phrase.phrase}</span> - <span>{phrase.translation}</span> (
+            <span>
+              <i>{phrase.pronunciation}</i>i
+            </span>
+            )
           </li>
         ))}
       </ul>
