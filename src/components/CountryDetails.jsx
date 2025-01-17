@@ -3,7 +3,7 @@ import FlagDisplay from "./FlagDisplay";
 
 const CountryDetails = ({ country }) => {
   return (
-    <div>
+    <div className="flag">
       <FlagDisplay flag={country.flag} />
       <h2>{country.name}</h2>
       <p>{country.description}</p>
