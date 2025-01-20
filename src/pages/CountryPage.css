@@ -92,3 +92,29 @@
     flex: 1 1 100%;
   }
 }
+
+.country-list-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.country-list {
+  display: flex;
+  justify-content: center;
+}
+
+.country-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FixedSizeGrid as Grid } from "react-window";
 import CountryCard from "./CountryCard";
 
 const CountryList = ({ countries, onSelectCountry }) => {
@@ -8,22 +9,45 @@ const CountryList = ({ countries, onSelectCountry }) => {
     country.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const cardWidth = 400;
+  const cardHeight = 300;
+  const columns = 3;
+
+  const renderCell = ({ columnIndex, rowIndex, style }) => {
+    const index = rowIndex * columns + columnIndex;
+    if (index >= filteredCountries.length) return null;
+    const country = filteredCountries[index];
+    return (
+      <div style={style} className="country-card-container">
+        <CountryCard
+          key={country.id}
+          country={country}
+          onSelect={() => onSelectCountry(country)}
+        />
+      </div>
+    );
+  };
+
   return (
-    <div>
+    <div className="country-list-container">
       <input
         type="text"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         placeholder="Search countries"
+        className="search-input"
       />
       <div className="country-list">
-        {filteredCountries.map((country) => (
-          <CountryCard
-            key={country.id}
-            country={country}
-            onSelect={() => onSelectCountry(country)}
-          />
-        ))}
+        <Grid
+          columnCount={columns}
+          columnWidth={cardWidth * 1.5}
+          height={500}
+          rowCount={Math.ceil(filteredCountries.length / columns)}
+          rowHeight={cardHeight}
+          width={cardWidth * columns * 1.8}
+        >
+          {renderCell}
+        </Grid>
       </div>
     </div>
   );

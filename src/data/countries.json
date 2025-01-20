@@ -159,5 +159,61 @@
         "answer": "Grazie"
       }
     ]
+  },
+
+  {
+    "id": 4,
+    "name": "Japan",
+    "flag": "/images/japanFlag.jpg",
+    "description": "Japan is famous for its blend of traditional culture and modern technology. It is known for cherry blossoms, sushi, and historical sites like Kyoto's temples.",
+    "phrases": [
+      {
+        "phrase": "こんにちは",
+        "translation": "Hello",
+        "pronunciation": "Kon-ni-chi-wa"
+      },
+      {
+        "phrase": "ありがとう",
+        "translation": "Thank you",
+        "pronunciation": "A-ri-ga-to"
+      },
+      {
+        "phrase": "さようなら",
+        "translation": "Goodbye",
+        "pronunciation": "Sa-yo-na-ra"
+      },
+      {
+        "phrase": "すみません",
+        "translation": "Excuse me",
+        "pronunciation": "Su-mi-ma-sen"
+      }
+    ],
+    "traditions": [
+      "The Tea Ceremony, a ritualistic way of preparing and drinking tea.",
+      "Celebration of Hanami, enjoying cherry blossoms in spring.",
+      "Wearing traditional kimono during festivals and ceremonies."
+    ],
+    "moreDetails": [
+      {
+        "capital": "Tokyo",
+        "population": 125960000,
+        "area": 377975,
+        "languages": ["Japanese"],
+        "currency": "Yen (JPY)",
+        "largestCity": "Tokyo"
+      }
+    ],
+    "quizQuestions": [
+      {
+        "question": "What does 'こんにちは' mean in English?",
+        "options": ["Thank you", "Goodbye", "Hello"],
+        "answer": "Hello"
+      },
+      {
+        "question": "What is the traditional Japanese garment called?",
+        "options": ["Hanbok", "Kimono", "Sari"],
+        "answer": "Kimono"
+      }
+    ]
   }
 ]
