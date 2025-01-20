@@ -31,6 +31,16 @@
       "Wine and cheese tasting is a cherished tradition in France.",
       "The Epiphany celebration with Galette des Rois (King's Cake)."
     ],
+    "moreDetails": [
+      {
+        "capital": "Paris",
+        "population": 67390000,
+        "area": 643801,
+        "languages": ["French"],
+        "currency": "Euro (EUR)",
+        "largestCity": "Paris"
+      }
+    ],
     "quizQuestions": [
       {
         "question": "What is the national holiday of France called?",
@@ -76,6 +86,16 @@
       "Celebration of Hanami, enjoying cherry blossoms in spring.",
       "Wearing traditional kimono during festivals and ceremonies."
     ],
+    "moreDetails": [
+      {
+        "capital": "Tokyo",
+        "population": 125960000,
+        "area": 377975,
+        "languages": ["Japanese"],
+        "currency": "Yen (JPY)",
+        "largestCity": "Tokyo"
+      }
+    ],
     "quizQuestions": [
       {
         "question": "What does 'こんにちは' mean in English?",
@@ -116,6 +136,16 @@
       "La Festa della Repubblica on June 2nd, celebrating Italy's republic.",
       "Making and enjoying traditional Italian dishes as a family.",
       "The Carnival of Venice with its famous masks and costumes."
+    ],
+    "moreDetails": [
+      {
+        "capital": "Rome",
+        "population": 60317116,
+        "area": 301340,
+        "languages": ["Italian"],
+        "currency": "Euro (EUR)",
+        "largestCity": "Rome"
+      }
     ],
     "quizQuestions": [
       {
