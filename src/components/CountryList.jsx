@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FixedSizeGrid as Grid } from "react-window";
+import useFilteredCountries from "../hooks/useFilteredCountries";
 import CountryCard from "./CountryCard";
 
-const CountryList = ({ countries, onSelectCountry }) => {
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const filteredCountries = countries.filter((country) =>
-    country.name.toLowerCase().includes(searchTerm.toLowerCase())
+const CountryList = ({ onSelectCountry }) => {
+  const { filteredCountries, searchTerm, setSearchTerm } = useFilteredCountries(
+    "/data/countries.json"
   );
 
   const cardWidth = 400;
