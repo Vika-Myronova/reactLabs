@@ -4,9 +4,15 @@ import useFilteredCountries from "../hooks/useFilteredCountries";
 import CountryCard from "./CountryCard";
 
 const CountryList = ({ onSelectCountry }) => {
+  const searchInputRef = useRef(null);
+
   const { filteredCountries, searchTerm, setSearchTerm } = useFilteredCountries(
     "/data/countries.json"
   );
+
+  useEffect(() => {
+    searchInputRef.current.focus();
+  }, []);
 
   const cardWidth = 400;
   const cardHeight = 300;
@@ -30,6 +36,7 @@ const CountryList = ({ onSelectCountry }) => {
   return (
     <div className="country-list-container">
       <input
+        ref={searchInputRef}
         type="text"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
