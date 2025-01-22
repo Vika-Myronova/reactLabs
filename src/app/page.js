@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import HomePage from "../pages/HomePage";
 import CountryPage from "../pages/CountryPage";
 import countriesData from "/public/data/countries.json";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 export default function Home() {
   const [countries, setCountries] = useState(countriesData);
@@ -18,7 +19,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <ThemeProvider>
       {selectedCountry ? (
         <CountryPage country={selectedCountry} />
       ) : (
@@ -28,6 +29,6 @@ export default function Home() {
           onAddCountry={handleAddCountry}
         />
       )}
-    </div>
+    </ThemeProvider>
   );
 }

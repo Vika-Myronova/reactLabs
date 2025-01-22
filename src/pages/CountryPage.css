@@ -5,21 +5,21 @@
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #ffffff;
+  background-color: var(--background-color);
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .country-header {
   padding: 20px;
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  background: var(--background-color-greeting);
   border-radius: 8px;
   text-align: center;
 }
 
 .country-header h2 {
   font-size: 28px;
-  color: #333333;
+  color: var(--bg-color-header-section);
   margin-top: 10px;
 }
 
@@ -39,7 +39,7 @@
 .phrases-section,
 .traditions-section {
   flex: 1 1 calc(50% - 20px);
-  background-color: #f8f9fa;
+  background: var(--background-color-greeting);
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -48,12 +48,12 @@
 .phrases-section h3,
 .traditions-section h3 {
   font-size: 24px;
-  color: #007bff;
+  color: var(--bg-color-header-section);
   margin-bottom: 10px;
 }
 
 .quiz-section {
-  background-color: #e9ecef;
+  background: var(--background-color-greeting);
   padding: 20px;
   border-radius: 8px;
   text-align: center;
@@ -65,8 +65,8 @@
 }
 
 .quiz-section button {
-  background-color: #007bff;
-  color: white;
+  background-color: var(--button-background);
+  color: rgb(255, 255, 255);
   padding: 10px 20px;
   font-size: 16px;
   border: none;
@@ -76,7 +76,7 @@
 }
 
 .quiz-section button:hover {
-  background-color: #0056b3;
+  background-color: var(--button-background-hover);
 }
 .quiz-section .question {
   padding: 10px;

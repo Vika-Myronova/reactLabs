@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import CountryList from "../components/CountryList";
 import AboutSection from "../components/AboutSection";
 import AddCountryForm from "../components/AddCountyForm";
+import { useTheme } from "@/context/ThemeContext";
 
 const HomePage = ({ countries, onSelectCountry, onAddCountry }) => {
   const [isAddingCountry, setIsAddingCountry] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const handleAddCountry = (newCountry) => {
     onAddCountry(newCountry);
@@ -20,6 +22,9 @@ const HomePage = ({ countries, onSelectCountry, onAddCountry }) => {
           onClick={() => setIsAddingCountry(true)}
         >
           Додати країну
+        </button>
+        <button className="theme-toggle-btn" onClick={toggleTheme}>
+          {theme === "light" ? "Темна Тема" : "Світла Тема"}
         </button>
       </div>
       {isAddingCountry ? (

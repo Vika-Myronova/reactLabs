@@ -4,23 +4,52 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Arial", sans-serif;
-  background: radial-gradient(
+.theme-light {
+  --background-color: radial-gradient(
     circle,
     rgba(197, 198, 244, 1) 0%,
     rgba(255, 255, 255, 1) 100%
   );
-  color: #333;
-  padding: 20px;
-}
-
-.greeting {
-  background: radial-gradient(
+  --background-color-greeting: radial-gradient(
     circle,
     rgba(245, 221, 239, 1) 0%,
     rgba(255, 255, 255, 1) 100%
   );
+  --text-color: #333;
+  --button-background: #007bff;
+  --button-text: #ffffff;
+  --button-background-hover: #0056b3;
+  --bg-color-country-card: #f7f8fb;
+  --bg-color-header-section: #007bff;
+}
+
+.theme-dark {
+  --background-color: radial-gradient(
+    circle,
+    rgba(40, 39, 39, 1) 0%,
+    rgba(0, 0, 0, 1) 97%
+  );
+  --background-color-greeting: radial-gradient(
+    circle,
+    rgba(75, 75, 75, 1) 0%,
+    rgba(22, 21, 21, 1) 100%
+  );
+  --text-color: #e0e0e0;
+  --button-background: #393939;
+  --button-background-hover: #474747;
+  --bg-color-country-card: #474747;
+  --bg-color-header-section: #aad2fc;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  padding: 20px;
+}
+
+.greeting {
+  background: var(--background-color-greeting);
 }
 
 h1,
@@ -28,14 +57,14 @@ h2,
 h3,
 h4 {
   font-weight: 600;
-  color: #333;
+  color: var(--text-color);
 }
 
 button {
   cursor: pointer;
   padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
+  background-color: var(--button-background);
+  color: var(--button-text);
   border: none;
   border-radius: 5px;
   font-size: 14px;
@@ -43,7 +72,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: var(--button-background-hover);
 }
 
 input[type="text"] {
@@ -55,7 +84,7 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-  border-color: #007bff;
+  border-color: var(--button-background);
 }
 
 ul {
@@ -71,7 +100,7 @@ li {
   width: 350px;
   margin: 15px;
   padding: 20px;
-  background-color: #f7f8fb;
+  background-color: var(--bg-color-country-card);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   transition: transform 0.3s ease;
