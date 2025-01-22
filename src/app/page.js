@@ -3,13 +3,18 @@
 import React, { useState } from "react";
 import HomePage from "../pages/HomePage";
 import CountryPage from "../pages/CountryPage";
-import countriesData from "../data/countries.json";
+import countriesData from "/public/data/countries.json";
 
 export default function Home() {
+  const [countries, setCountries] = useState(countriesData);
   const [selectedCountry, setSelectedCountry] = useState(null);
 
   const handleSelectCountry = (country) => {
     setSelectedCountry(country);
+  };
+
+  const handleAddCountry = (newCountry) => {
+    setCountries((prevCountries) => [...prevCountries, newCountry]);
   };
 
   return (
@@ -18,8 +23,9 @@ export default function Home() {
         <CountryPage country={selectedCountry} />
       ) : (
         <HomePage
-          countries={countriesData}
+          countries={countries}
           onSelectCountry={handleSelectCountry}
+          onAddCountry={handleAddCountry}
         />
       )}
     </div>
