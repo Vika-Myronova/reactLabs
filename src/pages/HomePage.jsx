@@ -16,7 +16,6 @@ const HomePage = ({ countries, onSelectCountry, onAddCountry }) => {
   return (
     <div className="home-page">
       <div className="header">
-        <h1>Культурна спадщина</h1>
         <button
           className="add-country-btn"
           onClick={() => setIsAddingCountry(true)}

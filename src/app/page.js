@@ -5,6 +5,8 @@ import HomePage from "../pages/HomePage";
 import CountryPage from "../pages/CountryPage";
 import countriesData from "/public/data/countries.json";
 import { ThemeProvider } from "@/context/ThemeContext";
+import { FontSizeProvider } from "@/context/FontSizeProvider";
+import FontSizeControls from "@/components/FontSizeControls";
 
 export default function Home() {
   const [countries, setCountries] = useState(countriesData);
@@ -20,15 +22,18 @@ export default function Home() {
 
   return (
     <ThemeProvider>
-      {selectedCountry ? (
-        <CountryPage country={selectedCountry} />
-      ) : (
-        <HomePage
-          countries={countries}
-          onSelectCountry={handleSelectCountry}
-          onAddCountry={handleAddCountry}
-        />
-      )}
+      <FontSizeProvider>
+        <FontSizeControls />
+        {selectedCountry ? (
+          <CountryPage country={selectedCountry} />
+        ) : (
+          <HomePage
+            countries={countries}
+            onSelectCountry={handleSelectCountry}
+            onAddCountry={handleAddCountry}
+          />
+        )}
+      </FontSizeProvider>
     </ThemeProvider>
   );
 }

@@ -4,6 +4,18 @@
   box-sizing: border-box;
 }
 
+body[data-font-size="small"] {
+  font-size: 14px;
+}
+
+body[data-font-size="medium"] {
+  font-size: 16px;
+}
+
+body[data-font-size="large"] {
+  font-size: 18px;
+}
+
 .theme-light {
   --background-color: radial-gradient(
     circle,
@@ -43,6 +55,7 @@
 
 body {
   font-family: "Arial", sans-serif;
+  font-size: var(--font-size-medium);
   background: var(--background-color);
   color: var(--text-color);
   padding: 20px;
