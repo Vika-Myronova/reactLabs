@@ -119,14 +119,6 @@ input[type="text"]:focus {
   border-color: var(--button-background);
 }
 
-ul {
-  list-style-type: none;
-}
-
-li {
-  margin: 10px 0;
-}
-
 .country-card {
   display: inline-block;
   width: 350px;

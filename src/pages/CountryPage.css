@@ -8,6 +8,7 @@
   background-color: var(--background-color);
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
 }
 
 .country-header {
@@ -15,6 +16,7 @@
   background: var(--background-color-greeting);
   border-radius: 8px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .country-header h2 {
@@ -40,16 +42,9 @@
 .traditions-section {
   flex: 1 1 calc(50% - 20px);
   background: var(--background-color-greeting);
-  padding: 15px;
+  padding: 25px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.phrases-section h3,
-.traditions-section h3 {
-  font-size: 24px;
-  color: var(--bg-color-header-section);
-  margin-bottom: 10px;
 }
 
 .quiz-section {
@@ -57,6 +52,7 @@
   padding: 20px;
   border-radius: 8px;
   text-align: center;
+  margin-top: 30px;
 }
 
 .quiz-section h2 {

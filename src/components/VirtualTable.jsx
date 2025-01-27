@@ -1,5 +1,6 @@
 import React from "react";
 import { FixedSizeList as List } from "react-window";
+import styles from "./VirtualTable.module.css";
 
 const CountryDetailsTable = ({ details }) => {
   const countryDetails = [
@@ -13,15 +14,15 @@ const CountryDetailsTable = ({ details }) => {
   const renderRow = ({ index, style }) => {
     const detail = countryDetails[index];
     return (
-      <div style={style} className="country-detail-row">
-        <div className="country-detail-key">{detail.key}</div>
-        <div className="country-detail-value">{detail.value}</div>
+      <div style={style} className={styles.detailRow}>
+        <div className={styles.detailKey}>{detail.key}</div>
+        <div className={styles.detailValue}>{detail.value}</div>
       </div>
     );
   };
 
   return (
-    <div className="country-details-table">
+    <div className={styles.countryDetailsTable}>
       <List
         height={150}
         itemCount={countryDetails.length}
