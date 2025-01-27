@@ -5,7 +5,7 @@
 }
 
 body[data-font-size="small"] {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 body[data-font-size="medium"] {
@@ -13,7 +13,26 @@ body[data-font-size="medium"] {
 }
 
 body[data-font-size="large"] {
-  font-size: 18px;
+  font-size: 20px;
+}
+
+body.normal-contrast {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --button-background: #f0f0f0;
+  --button-text: #000000;
+}
+
+.high-contrast {
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --button-background: #181818;
+  --button-text: ##ffffff;
+  --button-background-hover: #05cbee;
+  --bg-color-country-card: #f7f8fb;
+  --bg-color-header-section: #ffffff;
+  --bg-color-country-card: #181818;
+  --bg-color-country-card-hover: #05cbee;
 }
 
 .theme-light {
@@ -121,6 +140,7 @@ li {
 
 .country-card:hover {
   transform: scale(1.05);
+  background-color: var(--bg-color-country-card-hover);
 }
 
 .country-card img {
