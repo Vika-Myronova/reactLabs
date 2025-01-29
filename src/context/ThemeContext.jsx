@@ -15,6 +15,9 @@ export const ThemeProvider = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <button className="theme-toggle-btn" onClick={toggleTheme}>
+        {theme === "light" ? "Темна Тема" : "Світла Тема"}
+      </button>
       {children}
     </ThemeContext.Provider>
   );

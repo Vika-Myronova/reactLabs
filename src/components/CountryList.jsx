@@ -1,9 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FixedSizeGrid as Grid } from "react-window";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import useFilteredCountries from "../hooks/useFilteredCountries";
 import CountryCard from "./CountryCard";
 
 const CountryList = ({ onSelectCountry }) => {
+  const router = useRouter();
   const searchInputRef = useRef(null);
 
   const { filteredCountries, searchTerm, setSearchTerm } = useFilteredCountries(
@@ -24,11 +27,9 @@ const CountryList = ({ onSelectCountry }) => {
     const country = filteredCountries[index];
     return (
       <div style={style} className="country-card-container">
-        <CountryCard
-          key={country.id}
-          country={country}
-          onSelect={() => onSelectCountry(country)}
-        />
+        <Link href={`/country/${country.id}`} passHref>
+          <CountryCard key={country.id} country={country} />
+        </Link>
       </div>
     );
   };

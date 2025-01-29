@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import HomePage from "../pages/HomePage";
-import CountryPage from "../pages/CountryPage";
+import HomePage from "@/components/HomePage";
 import countriesData from "/public/data/countries.json";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { FontSizeProvider } from "@/context/FontSizeProvider";
@@ -12,11 +11,6 @@ import FontSizeControls from "@/components/FontSizeControls";
 
 export default function Home() {
   const [countries, setCountries] = useState(countriesData);
-  const [selectedCountry, setSelectedCountry] = useState(null);
-
-  const handleSelectCountry = (country) => {
-    setSelectedCountry(country);
-  };
 
   const handleAddCountry = (newCountry) => {
     setCountries((prevCountries) => [...prevCountries, newCountry]);
@@ -28,15 +22,7 @@ export default function Home() {
         <ContrastProvider>
           <FontSizeControls />
           <ContrastControls />
-          {selectedCountry ? (
-            <CountryPage country={selectedCountry} />
-          ) : (
-            <HomePage
-              countries={countries}
-              onSelectCountry={handleSelectCountry}
-              onAddCountry={handleAddCountry}
-            />
-          )}
+          <HomePage countries={countries} onAddCountry={handleAddCountry} />
         </ContrastProvider>
       </FontSizeProvider>
     </ThemeProvider>

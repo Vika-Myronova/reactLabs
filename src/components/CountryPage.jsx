@@ -1,9 +1,11 @@
 import React from "react";
-import CountryDetails from "../components/CountryDetails";
-import Quiz from "../components/Quiz";
-import PhrasesList from "../components/PhrasesList";
-import TraditionsList from "../components/TraditionsList";
-import VirtualTable from "../components/VirtualTable";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import CountryDetails from "./CountryDetails";
+import Quiz from "./Quiz";
+import PhrasesList from "./PhrasesList";
+import TraditionsList from "./TraditionsList";
+import VirtualTable from "./VirtualTable";
 import "./CountryPage.css";
 import { useTheme, ThemeProvider } from "@/context/ThemeContext";
 
@@ -20,10 +22,10 @@ const CountryPage = ({ country }) => {
   }
 
   return (
-    <ThemeProvider>
-      <button className="theme-toggle-btn" onClick={toggleTheme}>
-        {theme === "light" ? "Темна Тема" : "Світла Тема"}
-      </button>
+    <>
+      <Link href="/">
+        <button>Home</button>
+      </Link>
       <div className="country-page">
         <section className="country-header">
           <CountryDetails country={country} />
@@ -54,7 +56,7 @@ const CountryPage = ({ country }) => {
           ) : null}
         </section>
       </div>
-    </ThemeProvider>
+    </>
   );
 };
 
