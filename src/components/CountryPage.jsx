@@ -22,41 +22,36 @@ const CountryPage = ({ country }) => {
   }
 
   return (
-    <>
-      <Link href="/">
-        <button>Home</button>
-      </Link>
-      <div className="country-page">
-        <section className="country-header">
-          <CountryDetails country={country} />
-        </section>
+    <div className="country-page">
+      <section className="country-header">
+        <CountryDetails country={country} />
+      </section>
 
-        <section className="country-content">
-          {country.phrases?.length > 0 && (
-            <div className="phrases-section">
-              <PhrasesList phrases={country.phrases} />
-            </div>
-          )}
-          {country.traditions?.length > 0 && (
-            <div className="traditions-section">
-              <TraditionsList traditions={country.traditions} />
-            </div>
-          )}
-          {country.moreDetails && (
-            <div className="details-section">
-              <h2>Country Details</h2>
-              <VirtualTable details={country.moreDetails[0]} />
-            </div>
-          )}
-        </section>
-        <section className="quiz-section">
-          <h2>Test Your Knowledge</h2>
-          {country.quizQuestions?.length > 0 ? (
-            <Quiz questions={country.quizQuestions} />
-          ) : null}
-        </section>
-      </div>
-    </>
+      <section className="country-content">
+        {country.phrases?.length > 0 && (
+          <div className="phrases-section">
+            <PhrasesList phrases={country.phrases} />
+          </div>
+        )}
+        {country.traditions?.length > 0 && (
+          <div className="traditions-section">
+            <TraditionsList traditions={country.traditions} />
+          </div>
+        )}
+        {country.moreDetails && (
+          <div className="details-section">
+            <h2>Country Details</h2>
+            <VirtualTable details={country.moreDetails[0]} />
+          </div>
+        )}
+      </section>
+      <section className="quiz-section">
+        <h2>Test Your Knowledge</h2>
+        {country.quizQuestions?.length > 0 ? (
+          <Quiz questions={country.quizQuestions} />
+        ) : null}
+      </section>
+    </div>
   );
 };
 

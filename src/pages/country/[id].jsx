@@ -13,9 +13,5 @@ export default function Country() {
   const country = countriesData.find((c) => String(c.id) === id);
   if (!country) return <p>Country not found</p>;
 
-  return (
-    <ThemeProvider>
-      <CountryPage country={country} />
-    </ThemeProvider>
-  );
+  return <CountryPage country={country} />;
 }
