@@ -4,6 +4,7 @@ export const useCountryStore = create((set, get) => ({
   countries: [],
   filteredCountries: [],
   searchTerm: "",
+  selectedCountry: null,
 
   fetchCountries: async () => {
     try {
@@ -21,5 +22,9 @@ export const useCountryStore = create((set, get) => ({
       country.name.toLowerCase().includes(term.toLowerCase())
     );
     set({ searchTerm: term, filteredCountries: filtered });
+  },
+
+  setSelectedCountry: (country) => {
+    set({ selectedCountry: country });
   },
 }));

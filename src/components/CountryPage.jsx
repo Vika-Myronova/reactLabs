@@ -1,17 +1,16 @@
-import React from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import React, { useEffect } from "react";
+import { useCountryStore } from "@/store/countryStore";
 import CountryDetails from "./CountryDetails";
 import Quiz from "./Quiz";
 import PhrasesList from "./PhrasesList";
 import TraditionsList from "./TraditionsList";
 import VirtualTable from "./VirtualTable";
 import "./CountryPage.css";
-import { useTheme, ThemeProvider } from "@/context/ThemeContext";
 
-const CountryPage = ({ country }) => {
-  const { theme, toggleTheme } = useTheme();
-  if (!country) {
+const CountryPage = () => {
+  const { selectedCountry } = useCountryStore();
+
+  if (!selectedCountry) {
     return (
       <div className="country-page">
         <p className="error-message">
@@ -24,31 +23,31 @@ const CountryPage = ({ country }) => {
   return (
     <div className="country-page">
       <section className="country-header">
-        <CountryDetails country={country} />
+        <CountryDetails country={selectedCountry} />
       </section>
 
       <section className="country-content">
-        {country.phrases?.length > 0 && (
+        {selectedCountry.phrases?.length > 0 && (
           <div className="phrases-section">
-            <PhrasesList phrases={country.phrases} />
+            <PhrasesList phrases={selectedCountry.phrases} />
           </div>
         )}
-        {country.traditions?.length > 0 && (
+        {selectedCountry.traditions?.length > 0 && (
           <div className="traditions-section">
-            <TraditionsList traditions={country.traditions} />
+            <TraditionsList traditions={selectedCountry.traditions} />
           </div>
         )}
-        {country.moreDetails && (
+        {selectedCountry.moreDetails && (
           <div className="details-section">
-            <h2>Country Details</h2>
-            <VirtualTable details={country.moreDetails[0]} />
+            <h2>More Details</h2>
+            <VirtualTable details={selectedCountry.moreDetails[0]} />
           </div>
         )}
       </section>
       <section className="quiz-section">
         <h2>Test Your Knowledge</h2>
-        {country.quizQuestions?.length > 0 ? (
-          <Quiz questions={country.quizQuestions} />
+        {selectedCountry.quizQuestions?.length > 0 ? (
+          <Quiz questions={selectedCountry.quizQuestions} />
         ) : null}
       </section>
     </div>

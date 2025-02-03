@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import CountryList from "./CountryList";
 import AboutSection from "./AboutSection";
 import AddCountryForm from "./AddCountyForm";
-import { useTheme } from "@/context/ThemeContext";
 import Link from "next/link";
 
 const HomePage = ({ countries, onSelectCountry, onAddCountry }) => {
   const [isAddingCountry, setIsAddingCountry] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   const handleAddCountry = (newCountry) => {
     onAddCountry(newCountry);

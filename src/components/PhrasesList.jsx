@@ -1,9 +1,8 @@
 import React from "react";
-import styles from "./CountryContent.module.css";
 
 const PhrasesList = ({ phrases }) => {
   return (
-    <div className={styles.sections}>
+    <>
       <h3>Common Phrases</h3>
       <ul>
         {phrases.map((phrase, index) => (
@@ -16,7 +15,7 @@ const PhrasesList = ({ phrases }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 };
 
