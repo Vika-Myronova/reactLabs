@@ -2,8 +2,6 @@ import React from "react";
 import { useForm, useFieldArray } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import Link from "next/link";
-import { ThemeProvider } from "@/context/ThemeContext";
 import styles from "./AddCountryForm.module.css";
 
 const schema = yup.object().shape({

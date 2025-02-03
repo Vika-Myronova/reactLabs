@@ -7,7 +7,6 @@ const AboutSection = () => {
       style={{
         padding: "20px",
         textAlign: "center",
-        //backgroundColor: "#F0F8FF",
         marginBottom: "20px",
       }}
     >
