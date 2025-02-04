@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { ThemeProvider } from "@/context/ThemeContext";
+import { ROUTES } from "@/constants/routes";
 import { FontSizeProvider } from "@/context/FontSizeProvider";
 import { ContrastProvider } from "@/context/ContrastProvider";
 import ContrastControls from "@/components/ContrastControls";
@@ -15,10 +16,10 @@ const Layout = ({ children }) => {
           <div className={styles.layout}>
             <header className={styles.header}>
               <nav className="navigation">
-                <Link href="/">
+                <Link href={ROUTES.HOME}>
                   <button>Головна</button>
                 </Link>
-                <Link href="/country/add-country">
+                <Link href={ROUTES.ADD_COUNTRY}>
                   <button>Додати країну</button>
                 </Link>
               </nav>

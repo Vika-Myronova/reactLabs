@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { FixedSizeGrid as Grid } from "react-window";
 import Link from "next/link";
+import { ROUTES } from "@/constants/routes";
 import { useCountryStore } from "@/store/countryStore";
 import CountryCard from "./CountryCard";
 
@@ -18,6 +19,7 @@ const CountryList = () => {
   const cardWidth = 400;
   const cardHeight = 300;
   const columns = 3;
+  const columnWidth = (cardWidth * columns) / 2;
 
   const renderCell = ({ columnIndex, rowIndex, style }) => {
     const index = rowIndex * columns + columnIndex;
@@ -26,7 +28,7 @@ const CountryList = () => {
 
     return (
       <div style={style} className="country-card-container">
-        <Link href={`/country/${country.id}`} passHref>
+        <Link href={ROUTES.COUNTRY(country.id)} passHref>
           <CountryCard key={country.id} country={country} />
         </Link>
       </div>
@@ -46,7 +48,7 @@ const CountryList = () => {
       <div className="country-list">
         <Grid
           columnCount={columns}
-          columnWidth={cardWidth * 1.5}
+          columnWidth={columnWidth}
           height={500}
           rowCount={Math.ceil(filteredCountries.length / columns)}
           rowHeight={cardHeight}
