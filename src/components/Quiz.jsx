@@ -1,73 +1,76 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import { useQuizStore } from "@/store/quizStore";
+import styles from "./Quiz.module.css";
 
-const Quiz = ({ questions }) => {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [isCorrect, setIsCorrect] = useState(null);
+const Quiz = ({}) => {
+  const {
+    questions,
+    currentQuestionIndex,
+    selectedOption,
+    isCorrect,
+    score,
+    selectOption,
+    nextQuestion,
+    resetQuiz,
+  } = useQuizStore();
+
+  useEffect(() => {
+    resetQuiz();
+  }, [resetQuiz]);
 
   const currentQuestion = questions[currentQuestionIndex];
-
-  const handleOptionClick = (option) => {
-    setSelectedOption(option);
-    setIsCorrect(option === currentQuestion.answer);
-  };
-
-  const handleNextQuestion = () => {
-    setSelectedOption(null);
-    setIsCorrect(null);
-    setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
-  };
+  const isLastQuestion = currentQuestionIndex === questions.length - 1;
+  const isQuizComplete = currentQuestionIndex >= questions.length;
 
   return (
-    <div style={{ margin: "20px 0" }}>
-      {currentQuestion ? (
+    <div className={styles.quizContainer}>
+      {isQuizComplete ? (
         <div>
-          <p>
-            <strong>Question:</strong> {currentQuestion.question}
+          <p className={styles.questionText}>
+            Quiz complete! 🎉 Your score = {score} / {questions.length}!
           </p>
-          <div>
+          <button onClick={resetQuiz} className={styles.nextButton}>
+            Restart Quiz
+          </button>
+        </div>
+      ) : (
+        <div>
+          <p className={styles.questionText}>
+            Question: {currentQuestion.question}
+          </p>
+          <div className={styles.optionsContainer}>
             {currentQuestion.options.map((option, index) => (
               <button
                 key={index}
-                onClick={() => handleOptionClick(option)}
-                style={{
-                  margin: "5px",
-                  padding: "10px",
-                  backgroundColor:
-                    selectedOption === option ? "#ddd" : "#6495ED",
-                  border: "1px solid #ccc",
-                  cursor: "pointer",
-                }}
+                onClick={() => selectOption(option)}
+                disabled={selectedOption !== null}
+                className={`${styles.optionButton} ${
+                  selectedOption === option
+                    ? isCorrect
+                      ? styles.correct
+                      : styles.incorrect
+                    : ""
+                }`}
               >
                 {option}
               </button>
             ))}
           </div>
           {isCorrect !== null && (
-            <p style={{ color: isCorrect ? "green" : "red" }}>
+            <p className={isCorrect ? styles.correct : styles.incorrect}>
               {isCorrect
-                ? "Correct!"
-                : `Incorrect. The correct answer is ${currentQuestion.answer}.`}
+                ? "Correct! ✅"
+                : `Incorrect ❌. The correct answer is ${currentQuestion.answer}.`}
             </p>
           )}
-          {currentQuestionIndex < questions.length - 1 && (
-            <button
-              onClick={handleNextQuestion}
-              style={{
-                marginTop: "10px",
-                padding: "10px",
-                backgroundColor: "#007B1F",
-                color: "#fff",
-                border: "none",
-                cursor: "pointer",
-              }}
-            >
-              Next Question
-            </button>
-          )}
+          <button
+            onClick={nextQuestion}
+            disabled={selectedOption === null}
+            className={`${styles.nextButton} ${isLastQuestion ? styles.finish : ""}`}
+          >
+            {isLastQuestion ? "Finish Quiz" : "Next Question"}
+          </button>
         </div>
-      ) : (
-        <p>Quiz complete! Great job!</p>
       )}
     </div>
   );

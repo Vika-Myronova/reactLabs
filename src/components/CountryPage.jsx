@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useCountryStore } from "@/store/countryStore";
+import { useQuizStore } from "@/store/quizStore";
 import CountryDetails from "./CountryDetails";
 import Quiz from "./Quiz";
 import PhrasesList from "./PhrasesList";
@@ -9,6 +10,13 @@ import "./CountryPage.css";
 
 const CountryPage = () => {
   const { selectedCountry } = useCountryStore();
+  const setQuestions = useQuizStore((state) => state.setQuestions);
+
+  useEffect(() => {
+    if (selectedCountry?.quizQuestions) {
+      setQuestions(selectedCountry.quizQuestions);
+    }
+  }, [selectedCountry, setQuestions]);
 
   if (!selectedCountry) {
     return (
@@ -46,9 +54,7 @@ const CountryPage = () => {
       </section>
       <section className="quiz-section">
         <h2>Test Your Knowledge</h2>
-        {selectedCountry.quizQuestions?.length > 0 ? (
-          <Quiz questions={selectedCountry.quizQuestions} />
-        ) : null}
+        {selectedCountry.quizQuestions?.length > 0 ? <Quiz /> : null}
       </section>
     </div>
   );
