@@ -5,7 +5,6 @@ export const useCountryStore = create((set, get) => ({
   filteredCountries: [],
   searchTerm: "",
   selectedCountry: null,
-
   fetchCountries: async () => {
     try {
       const response = await fetch("/data/countries.json");
@@ -16,14 +15,18 @@ export const useCountryStore = create((set, get) => ({
     }
   },
 
-  setSearchTerm: (term) => {
-    const { countries } = get();
-    const filtered = countries.filter((country) =>
-      country.name.toLowerCase().includes(term.toLowerCase())
-    );
-    set({ searchTerm: term, filteredCountries: filtered });
+  updateSearchTerm: (term) => {
+    set({ searchTerm: term });
+    get().filterCountries();
   },
 
+  filterCountries: () => {
+    const { countries, searchTerm } = get();
+    const filtered = countries.filter((country) =>
+      country.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    set({ filteredCountries: filtered });
+  },
   setSelectedCountry: (country) => {
     set({ selectedCountry: country });
   },

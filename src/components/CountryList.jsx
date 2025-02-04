@@ -8,13 +8,17 @@ import CountryCard from "./CountryCard";
 const CountryList = () => {
   const searchInputRef = useRef(null);
 
-  const { filteredCountries, searchTerm, setSearchTerm, fetchCountries } =
+  const { filteredCountries, searchTerm, updateSearchTerm, fetchCountries } =
     useCountryStore();
 
   useEffect(() => {
     searchInputRef.current?.focus();
     fetchCountries();
   }, []);
+
+  const handleSearchChange = (e) => {
+    updateSearchTerm(e.target.value);
+  };
 
   const cardWidth = 400;
   const cardHeight = 300;
@@ -41,7 +45,7 @@ const CountryList = () => {
         ref={searchInputRef}
         type="text"
         value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={handleSearchChange}
         placeholder="Search countries"
         className="search-input"
       />
