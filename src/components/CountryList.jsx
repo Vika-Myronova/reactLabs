@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useCountryStore } from "@/store/countryStore";
 import CountryCard from "./CountryCard";
 
-const CountryList = ({ onSelectCountry }) => {
+const CountryList = () => {
   const searchInputRef = useRef(null);
 
   const { filteredCountries, searchTerm, setSearchTerm, fetchCountries } =

@@ -26,7 +26,9 @@ const Layout = ({ children }) => {
               <ContrastControls />
             </header>
             <main className={styles.main}>{children}</main>
-            <footer className={styles.footer}>© 2025 Cultural Heritage</footer>
+            <footer className={styles.footer}>
+              © 2025 Cultural Heritage App
+            </footer>
           </div>
         </ContrastProvider>
       </FontSizeProvider>

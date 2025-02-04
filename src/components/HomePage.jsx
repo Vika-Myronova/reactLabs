@@ -1,16 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import CountryList from "./CountryList";
 import AboutSection from "./AboutSection";
-import AddCountryForm from "./AddCountyForm";
+import { useCountryStore } from "@/store/countryStore";
 import Link from "next/link";
 
-const HomePage = ({ countries, onSelectCountry, onAddCountry }) => {
-  const [isAddingCountry, setIsAddingCountry] = useState(false);
-
-  const handleAddCountry = (newCountry) => {
-    onAddCountry(newCountry);
-    setIsAddingCountry(false);
-  };
+const HomePage = () => {
+  const { filteredCountries } = useCountryStore();
 
   return (
     <div className="home-page">
@@ -19,17 +14,8 @@ const HomePage = ({ countries, onSelectCountry, onAddCountry }) => {
           <button className="add-country-btn">Додати країну</button>
         </Link>
       </div>
-      {isAddingCountry ? (
-        <AddCountryForm onSubmit={handleAddCountry} />
-      ) : (
-        <>
-          <AboutSection />
-          <CountryList
-            countries={countries}
-            onSelectCountry={onSelectCountry}
-          />
-        </>
-      )}
+      <AboutSection />
+      <CountryList countries={filteredCountries} />
     </div>
   );
 };

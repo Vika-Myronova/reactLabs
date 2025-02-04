@@ -1,20 +1,22 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import HomePage from "@/components/HomePage";
-import countriesData from "/public/data/countries.json";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { FontSizeProvider } from "@/context/FontSizeProvider";
 import { ContrastProvider } from "@/context/ContrastProvider";
 import ContrastControls from "@/components/ContrastControls";
 import FontSizeControls from "@/components/FontSizeControls";
+import { useCountryStore } from "@/store/countryStore";
 
 export default function Home() {
-  const [countries, setCountries] = useState(countriesData);
+  const { fetchCountries, countries } = useCountryStore();
 
-  const handleAddCountry = (newCountry) => {
-    setCountries((prevCountries) => [...prevCountries, newCountry]);
-  };
+  useEffect(() => {
+    if (countries.length === 0) {
+      fetchCountries();
+    }
+  }, [countries, fetchCountries]);
 
   return (
     <ThemeProvider>
@@ -22,7 +24,7 @@ export default function Home() {
         <ContrastProvider>
           <FontSizeControls />
           <ContrastControls />
-          <HomePage countries={countries} onAddCountry={handleAddCountry} />
+          <HomePage />
         </ContrastProvider>
       </FontSizeProvider>
     </ThemeProvider>
