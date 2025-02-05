@@ -1,24 +1,17 @@
 import { create } from "zustand";
 
-export const useQuizStore = create((set, get) => ({
-  questions: [],
+export const useQuizStore = create((set) => ({
   currentQuestionIndex: 0,
   selectedOption: null,
   isCorrect: null,
   score: 0,
 
-  setQuestions: (questions) =>
-    set({ questions, currentQuestionIndex: 0, score: 0 }),
-
-  selectOption: (option) => {
-    const { questions, currentQuestionIndex, score } = get();
-    const isCorrect = option === questions[currentQuestionIndex].answer;
-
-    set({
+  setSelectedOption: (option, correctAnswer) => {
+    set((state) => ({
       selectedOption: option,
-      isCorrect,
-      score: isCorrect ? score + 1 : score,
-    });
+      isCorrect: option === correctAnswer,
+      score: state.score + (option === correctAnswer ? 1 : 0),
+    }));
   },
 
   nextQuestion: () =>

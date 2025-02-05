@@ -1,18 +1,25 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useQuizStore } from "@/store/quizStore";
-import styles from "./Quiz.module.css";
+import styles from "@/styles/Quiz.module.css";
+import { useCountryStore } from "@/store/countryStore";
 
 const Quiz = ({}) => {
+  const { selectedCountry } = useCountryStore();
   const {
-    questions,
     currentQuestionIndex,
     selectedOption,
     isCorrect,
     score,
-    selectOption,
+    setSelectedOption,
     nextQuestion,
     resetQuiz,
   } = useQuizStore();
+
+  const questions = useMemo(
+    () => selectedCountry?.quizQuestions || [],
+    [selectedCountry]
+  );
+  if (!questions.length) return <p>No quiz available for this country.</p>;
 
   useEffect(() => {
     resetQuiz();
@@ -42,7 +49,9 @@ const Quiz = ({}) => {
             {currentQuestion.options.map((option, index) => (
               <button
                 key={index}
-                onClick={() => selectOption(option)}
+                onClick={() =>
+                  setSelectedOption(option, currentQuestion.answer)
+                }
                 disabled={selectedOption !== null}
                 className={`${styles.optionButton} ${
                   selectedOption === option
