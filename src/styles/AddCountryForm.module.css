@@ -1,0 +1,39 @@
+.add-country-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.add-country-form label {
+  font-weight: bold;
+}
+
+.add-country-form input,
+.add-country-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.tradition-field {
+  display: flex;
+  gap: 1rem;
+}
+
+.add-tradition-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-country-form p {
+  color: red;
+  font-size: 0.9rem;
+}

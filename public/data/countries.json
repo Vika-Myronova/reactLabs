@@ -1,0 +1,219 @@
+[
+  {
+    "id": 1,
+    "name": "France",
+    "flag": "/images/franceFlag.jpg",
+    "description": "France is known for its rich history, iconic landmarks like the Eiffel Tower, and world-renowned cuisine including croissants and baguettes. It is also the home of art and culture with famous museums like the Louvre.",
+    "phrases": [
+      {
+        "phrase": "Bonjour",
+        "translation": "Hello",
+        "pronunciation": "bohn-zhoor"
+      },
+      {
+        "phrase": "Merci",
+        "translation": "Thank you",
+        "pronunciation": "mehr-see"
+      },
+      {
+        "phrase": "Au revoir",
+        "translation": "Goodbye",
+        "pronunciation": "oh ruh-vwahr"
+      },
+      {
+        "phrase": "Excusez-moi",
+        "translation": "Excuse me",
+        "pronunciation": "eks-kyoo-zay mwah"
+      }
+    ],
+    "traditions": [
+      "Celebration of Bastille Day on July 14th, which includes fireworks and parades.",
+      "Wine and cheese tasting is a cherished tradition in France.",
+      "The Epiphany celebration with Galette des Rois (King's Cake)."
+    ],
+    "moreDetails": [
+      {
+        "capital": "Paris",
+        "population": 67390000,
+        "area": 643801,
+        "languages": ["French"],
+        "currency": "Euro (EUR)",
+        "largestCity": "Paris"
+      }
+    ],
+    "quizQuestions": [
+      {
+        "question": "What is the national holiday of France called?",
+        "options": ["Bastille Day", "Independence Day", "Revolution Day"],
+        "answer": "Bastille Day"
+      },
+      {
+        "question": "What is the French word for 'Thank you'?",
+        "options": ["Merci", "Bonjour", "Pardon"],
+        "answer": "Merci"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Japan",
+    "flag": "/images/japanFlag.jpg",
+    "description": "Japan is famous for its blend of traditional culture and modern technology. It is known for cherry blossoms, sushi, and historical sites like Kyoto's temples.",
+    "phrases": [
+      {
+        "phrase": "こんにちは",
+        "translation": "Hello",
+        "pronunciation": "Kon-ni-chi-wa"
+      },
+      {
+        "phrase": "ありがとう",
+        "translation": "Thank you",
+        "pronunciation": "A-ri-ga-to"
+      },
+      {
+        "phrase": "さようなら",
+        "translation": "Goodbye",
+        "pronunciation": "Sa-yo-na-ra"
+      },
+      {
+        "phrase": "すみません",
+        "translation": "Excuse me",
+        "pronunciation": "Su-mi-ma-sen"
+      }
+    ],
+    "traditions": [
+      "The Tea Ceremony, a ritualistic way of preparing and drinking tea.",
+      "Celebration of Hanami, enjoying cherry blossoms in spring.",
+      "Wearing traditional kimono during festivals and ceremonies."
+    ],
+    "moreDetails": [
+      {
+        "capital": "Tokyo",
+        "population": 125960000,
+        "area": 377975,
+        "languages": ["Japanese"],
+        "currency": "Yen (JPY)",
+        "largestCity": "Tokyo"
+      }
+    ],
+    "quizQuestions": [
+      {
+        "question": "What does 'こんにちは' mean in English?",
+        "options": ["Thank you", "Goodbye", "Hello"],
+        "answer": "Hello"
+      },
+      {
+        "question": "What is the traditional Japanese garment called?",
+        "options": ["Hanbok", "Kimono", "Sari"],
+        "answer": "Kimono"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Italy",
+    "flag": "/images/italyFlag.jpg",
+    "description": "Italy is renowned for its rich history, magnificent art, and iconic landmarks like the Colosseum and the Leaning Tower of Pisa. It is also famous for its delicious cuisine, including pasta, pizza, and gelato.",
+    "phrases": [
+      { "phrase": "Ciao", "translation": "Hello", "pronunciation": "chow" },
+      {
+        "phrase": "Grazie",
+        "translation": "Thank you",
+        "pronunciation": "grah-tsee-eh"
+      },
+      {
+        "phrase": "Arrivederci",
+        "translation": "Goodbye",
+        "pronunciation": "ah-ree-veh-DEHR-chee"
+      },
+      {
+        "phrase": "Scusi",
+        "translation": "Excuse me",
+        "pronunciation": "SKOO-zee"
+      }
+    ],
+    "traditions": [
+      "La Festa della Repubblica on June 2nd, celebrating Italy's republic.",
+      "Making and enjoying traditional Italian dishes as a family.",
+      "The Carnival of Venice with its famous masks and costumes."
+    ],
+    "moreDetails": [
+      {
+        "capital": "Rome",
+        "population": 60317116,
+        "area": 301340,
+        "languages": ["Italian"],
+        "currency": "Euro (EUR)",
+        "largestCity": "Rome"
+      }
+    ],
+    "quizQuestions": [
+      {
+        "question": "What is the traditional Italian dish made of flat dough and toppings?",
+        "options": ["Pasta", "Pizza", "Risotto"],
+        "answer": "Pizza"
+      },
+      {
+        "question": "What is the Italian word for 'Thank you'?",
+        "options": ["Grazie", "Ciao", "Prego"],
+        "answer": "Grazie"
+      }
+    ]
+  },
+
+  {
+    "id": 4,
+    "name": "Germany",
+    "flag": "/images/germanyFlag.jpg",
+    "description": "Germany is known for its rich history, cultural heritage, and contributions to philosophy, music, and science. It is famous for its beer, sausages, and historical landmarks like the Brandenburg Gate.",
+    "phrases": [
+      {
+        "phrase": "Hallo",
+        "translation": "Hello",
+        "pronunciation": "Ha-lo"
+      },
+      {
+        "phrase": "Danke",
+        "translation": "Thank you",
+        "pronunciation": "Dan-ke"
+      },
+      {
+        "phrase": "Auf Wiedersehen",
+        "translation": "Goodbye",
+        "pronunciation": "Auf Vee-der-zay-en"
+      },
+      {
+        "phrase": "Entschuldigung",
+        "translation": "Excuse me",
+        "pronunciation": "Ent-shool-dee-goong"
+      }
+    ],
+    "traditions": [
+      "Oktoberfest, a beer festival held annually in Munich.",
+      "Celebration of Christmas markets, with food, gifts, and decorations.",
+      "The tradition of Easter egg hunts during the Easter season."
+    ],
+    "moreDetails": [
+      {
+        "capital": "Berlin",
+        "population": 83166711,
+        "area": 357022,
+        "languages": ["German"],
+        "currency": "Euro (EUR)",
+        "largestCity": "Berlin"
+      }
+    ],
+    "quizQuestions": [
+      {
+        "question": "What does 'Hallo' mean in English?",
+        "options": ["Thank you", "Goodbye", "Hello"],
+        "answer": "Hello"
+      },
+      {
+        "question": "Which festival is famous in Germany for beer and sausages?",
+        "options": ["Carnival", "Oktoberfest", "Christmas Markets"],
+        "answer": "Oktoberfest"
+      }
+    ]
+  }
+]
