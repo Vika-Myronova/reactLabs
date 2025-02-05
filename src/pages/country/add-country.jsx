@@ -1,4 +1,5 @@
 import AddCountryForm from "@/components/AddCountyForm";
+import { ROUTES } from "@/constants/routes";
 import { useRouter } from "next/router";
 
 export default function AddCountry() {
@@ -6,7 +7,7 @@ export default function AddCountry() {
 
   const handleAddCountry = (newCountry) => {
     console.log(newCountry);
-    router.push("/");
+    router.push(ROUTES.HOME);
   };
   return <AddCountryForm onSubmit={handleAddCountry} />;
 }

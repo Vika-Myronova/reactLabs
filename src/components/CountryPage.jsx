@@ -10,13 +10,6 @@ import "./CountryPage.css";
 
 const CountryPage = () => {
   const { selectedCountry } = useCountryStore();
-  const setQuestions = useQuizStore((state) => state.setQuestions);
-
-  useEffect(() => {
-    if (selectedCountry?.quizQuestions) {
-      setQuestions(selectedCountry.quizQuestions);
-    }
-  }, [selectedCountry, setQuestions]);
 
   if (!selectedCountry) {
     return (

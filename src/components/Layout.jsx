@@ -6,7 +6,7 @@ import { FontSizeProvider } from "@/context/FontSizeProvider";
 import { ContrastProvider } from "@/context/ContrastProvider";
 import ContrastControls from "@/components/ContrastControls";
 import FontSizeControls from "@/components/FontSizeControls";
-import styles from "./Layout.module.css";
+import styles from "@/styles/Layout.module.css";
 
 const Layout = ({ children }) => {
   return (

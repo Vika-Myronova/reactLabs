@@ -1,15 +1,9 @@
 import React from "react";
+import styles from "@/styles/AboutSection.module.css";
 
 const AboutSection = () => {
   return (
-    <div
-      className="greeting"
-      style={{
-        padding: "20px",
-        textAlign: "center",
-        marginBottom: "20px",
-      }}
-    >
+    <div className={styles.greeting}>
       <h1>Welcome to the Cultural Heritage App</h1>
       <p>
         Explore the world by learning about different countries, their

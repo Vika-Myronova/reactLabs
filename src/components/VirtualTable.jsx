@@ -1,6 +1,6 @@
 import React from "react";
 import { FixedSizeList as List } from "react-window";
-import styles from "./VirtualTable.module.css";
+import styles from "@/styles/VirtualTable.module.css";
 
 const CountryDetailsTable = ({ details }) => {
   const countryDetails = [

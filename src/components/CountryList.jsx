@@ -24,6 +24,9 @@ const CountryList = () => {
   const cardHeight = 300;
   const columns = 3;
   const columnWidth = (cardWidth * columns) / 2;
+  const rowCount = Math.ceil(filteredCountries.length / columns);
+  const width = cardWidth * columns * 1.8;
+  const height = 500;
 
   const renderCell = ({ columnIndex, rowIndex, style }) => {
     const index = rowIndex * columns + columnIndex;
@@ -53,10 +56,10 @@ const CountryList = () => {
         <Grid
           columnCount={columns}
           columnWidth={columnWidth}
-          height={500}
-          rowCount={Math.ceil(filteredCountries.length / columns)}
+          height={height}
+          rowCount={rowCount}
           rowHeight={cardHeight}
-          width={cardWidth * columns * 1.8}
+          width={width}
         >
           {renderCell}
         </Grid>
