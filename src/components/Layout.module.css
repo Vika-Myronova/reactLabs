@@ -1,0 +1,33 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--background-color);
+  padding: 10px 20px;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  background: var(--background-color);
+}
+
+.navigation {
+  display: flex;
+}
+
+.navigation div {
+  margin: 10px;
+  color: rgb(15, 225, 225);
+}
