@@ -1,0 +1,120 @@
+.country-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.country-header {
+  padding: 20px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.country-header h2 {
+  font-size: 28px;
+  color: #333333;
+  margin-top: 10px;
+}
+
+.country-header img {
+  max-width: 150px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.country-content {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.phrases-section,
+.traditions-section {
+  flex: 1 1 calc(50% - 20px);
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.phrases-section h3,
+.traditions-section h3 {
+  font-size: 24px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.quiz-section {
+  background-color: #e9ecef;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.quiz-section h2 {
+  font-size: 24px;
+  color: #495057;
+}
+
+.quiz-section button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-section button:hover {
+  background-color: #0056b3;
+}
+.quiz-section .question {
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .country-content {
+    flex-direction: column;
+  }
+
+  .phrases-section,
+  .traditions-section {
+    flex: 1 1 100%;
+  }
+}
+
+.country-list-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.country-list {
+  display: flex;
+  justify-content: center;
+}
+
+.country-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
