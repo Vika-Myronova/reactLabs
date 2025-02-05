@@ -9,13 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "next": "15.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.1.4"
+    "react-router-dom": "^7.1.1",
+    "react-window": "^1.8.11"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "@typescript-eslint/parser": "^8.20.0",
     "eslint": "^9",
     "eslint-config-next": "15.1.4",
-    "@eslint/eslintrc": "^3"
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "prettier": "^3.4.2"
   }
 }
